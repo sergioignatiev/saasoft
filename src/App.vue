@@ -1,6 +1,10 @@
 <template>
   <div>
-   <button @click="store.pushToItems">+</button>
+    <section class="flex items-center gap-2">
+   <button class="8-24 h-8" @click="store.pushToItems">+</button>
+   <p>Учетная запись</p>
+    </section>
+    <p>Для указания нескольких меток для одной пары логин/пароль используйте разделитель ;</p>
  <the-input 
  v-for="item in items"
  :key="item.id"
