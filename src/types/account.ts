@@ -6,7 +6,8 @@ export type Account={
     marks:string,
   type:Type,
   login:string,
-  password:string|null
+  password:string|null,
+ 
 }
 export type AccountMarks=Omit<Account,'marks'>&{
 marks:string[]

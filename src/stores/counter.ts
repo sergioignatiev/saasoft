@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { nanoid } from 'nanoid'
-import { type Account } from '@/types/account'
+import { type Account,type AccountMarks } from '@/types/account'
 
 export const useCounterStore = defineStore('counter', () => {
 const myInfo=ref([{name:"Sergio"}])
@@ -19,7 +19,7 @@ items.value.push(
 
 
 
-const splittedItems=computed(()=>{
+const splittedItems=computed(():AccountMarks[]=>{
     return items.value.map(
         item=>{
             return {

@@ -9,23 +9,17 @@
  v-model:type="item.type"
  v-model:login="item.login"
  v-model:password="item.password"
+
  @delete="store.deleteItem"
  />
-<p>{{ items }}</p>
-<section class="">
-  <div class="m-10 bg-slate-100" v-for="item in splittedItems" :key="item.id">
-    
-    <p v-for="(mark,index) in item.marks" :key="index">{{ mark  }}</p>
-  </div>
-</section>
+<p>{{ splittedItems }}</p>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { type Account } from './types/account.ts';
+
 import {useCounterStore} from './stores/counter.ts';
-import { storeToRefs } from 'pinia';
-import { ref,computed } from 'vue';
+import { storeToRefs } from 'pinia'
 import TheInput from './components/TheInput.vue';
 const store=useCounterStore()
 const {items,splittedItems}=storeToRefs(store)
